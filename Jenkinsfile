@@ -1,55 +1,42 @@
-pipeline {
-    agent any
+pipeline{
+      agent any
 
-    environment {
+      environment {
         VENV_DIR = 'venv'
         GCP_PROJECT = 'mlops-project-2-459316'
         GCLOUD_PATH = "/var/jenkins_home/google-cloud-sdk/bin"
         KUBECTL_AUTH_PLUGIN = "/usr/lib/google-cloud-sdk/bin"
     }
 
-    parameters {
-        booleanParam(name: 'FORCE_BUILD', defaultValue: false, description: 'Force rebuild and push image')
-    }
+      stages{
 
-    stages {
-
-        stage("Cloning from Github") {
-            steps {
-                script {
+        stage("Cloning from Github...."){
+            steps{
+                script{
                     echo 'Cloning from Github...'
-                    checkout([$class: 'GitSCM',
-                        branches: [[name: '*/main']],
-                        userRemoteConfigs: [[
-                            credentialsId: 'jenkins-anime-github-token',
-                            url: 'https://github.com/AbulFaizBangi/Anime-Rec.git'
-                        ]],
-                        extensions: [[$class: 'CloneOption', depth: 0, noTags: false, shallow: false]]
-                    ])
+                    checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'jenkins-anime-github-token', url: 'https://github.com/AbulFaizBangi/Anime-Rec.git']])
                 }
             }
         }
-
-        stage("Making a virtual environment") {
-            steps {
-                script {
+        stage("Making a virtual environment...."){
+            steps{
+                script{
                     echo 'Making a virtual environment...'
                     sh '''
                     python -m venv ${VENV_DIR}
                     . ${VENV_DIR}/bin/activate
                     pip install --upgrade pip
                     pip install -e .
-                    pip install dvc
+                    pip install  dvc
                     '''
                 }
             }
         }
-
-        stage('DVC Pull') {
-            steps {
-                withCredentials([file(credentialsId: 'gcp-project-2-key', variable: 'GOOGLE_APPLICATION_CREDENTIALS')]) {
-                    script {
-                        echo 'DVC Pull...'
+        stage('DVC Pull'){
+            steps{
+                withCredentials([file(credentialsId:'gcp-project-2-key' , variable: 'GOOGLE_APPLICATION_CREDENTIALS' )]){
+                    script{
+                        echo 'DVC Pull....'
                         sh '''
                         . ${VENV_DIR}/bin/activate
                         dvc pull
@@ -58,27 +45,10 @@ pipeline {
                 }
             }
         }
-
-        stage('Build and Push Image to GCR') {
-            when {
-                expression {
-                    sh(script: 'git fetch --unshallow || true', returnStatus: true)
-                    def changed = sh(
-                        script: "git diff --quiet HEAD~1 HEAD Dockerfile src/ || echo 'changed'",
-                        returnStatus: true
-                    ) != 0
-
-                    def imageExists = sh(
-                        script: "gcloud container images list-tags gcr.io/${GCP_PROJECT}/ml-anime-project --filter='tags:latest' --format='get(tags)' | grep latest || true",
-                        returnStatus: true
-                    ) == 0
-
-                    return params.FORCE_BUILD || changed || !imageExists
-                }
-            }
-            steps {
-                withCredentials([file(credentialsId: 'gcp-project-2-key', variable: 'GOOGLE_APPLICATION_CREDENTIALS')]) {
-                    script {
+        stage('Build and Push Image to GCR'){
+            steps{
+                withCredentials([file(credentialsId:'gcp-project-2-key' , variable: 'GOOGLE_APPLICATION_CREDENTIALS' )]){
+                    script{
                         echo 'Build and Push Image to GCR'
                         sh '''
                         export PATH=$PATH:${GCLOUD_PATH}
@@ -89,14 +59,15 @@ pipeline {
                         docker push gcr.io/${GCP_PROJECT}/ml-anime-project:latest
                         '''
                     }
+                    
                 }
             }
         }
 
-        stage('Deploying to Kubernetes') {
-            steps {
-                withCredentials([file(credentialsId: 'gcp-project-2-key', variable: 'GOOGLE_APPLICATION_CREDENTIALS')]) {
-                    script {
+        stage('Deploying to Kubernetes'){
+            steps{
+                withCredentials([file(credentialsId:'gcp-project-2-key' , variable: 'GOOGLE_APPLICATION_CREDENTIALS' )]){
+                    script{
                         echo 'Deploying to Kubernetes'
                         sh '''
                         export PATH=$PATH:${GCLOUD_PATH}:${KUBECTL_AUTH_PLUGIN}
@@ -109,36 +80,23 @@ pipeline {
                 }
             }
         }
-
         stage('Push Docker Image to DockerHub') {
-            when {
-                expression {
-                    sh(script: 'git fetch --unshallow || true', returnStatus: true)
-                    def changed = sh(
-                        script: "git diff --quiet HEAD~1 HEAD Dockerfile src/ || echo 'changed'",
-                        returnStatus: true
-                    ) != 0
-
-                    return params.FORCE_BUILD || changed
-                }
-            }
             steps {
                 withCredentials([usernamePassword(
-                    credentialsId: 'DockerHub-Creds',
-                    usernameVariable: 'DOCKERHUB_USERNAME',
-                    passwordVariable: 'DOCKERHUB_PASSWORD'
-                )]) {
-                    script {
+                        credentialsId: 'DockerHub-Creds',
+                        usernameVariable: 'DOCKERHUB_USERNAME',
+                        passwordVariable: 'DOCKERHUB_PASSWORD'
+                  )]) {
                         echo 'Pushing Docker Image to DockerHub...'
                         sh '''
-                        echo ${DOCKERHUB_PASSWORD} | docker login -u ${DOCKERHUB_USERNAME} --password-stdin
-                        docker tag gcr.io/${GCP_PROJECT}/ml-anime-project:latest ${DOCKERHUB_USERNAME}/ml-anime-project:latest
-                        docker push ${DOCKERHUB_USERNAME}/ml-anime-project:latest
-                        docker logout
+                              echo ${DOCKERHUB_PASSWORD} | docker login -u ${DOCKERHUB_USERNAME} --password-stdin
+                              docker tag gcr.io/${GCP_PROJECT}/ml-anime-project:latest ${DOCKERHUB_USERNAME}/ml-anime-project:latest
+                              docker push ${DOCKERHUB_USERNAME}/ml-anime-project:latest
+                              docker logout
                         '''
-                    }
-                }
+                  }
+                  }
+        
             }
-        }
-    }
+}
 }
