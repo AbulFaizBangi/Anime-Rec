@@ -63,6 +63,23 @@ pipeline{
                 }
             }
         }
+
+        stage('Deploying to Kubernetes'){
+            steps{
+                withCredentials([file(credentialsId:'gcp-project-2-key' , variable: 'GOOGLE_APPLICATION_CREDENTIALS' )]){
+                    script{
+                        echo 'Deploying to Kubernetes'
+                        sh '''
+                        export PATH=$PATH:${GCLOUD_PATH}:${KUBECTL_AUTH_PLUGIN}
+                        gcloud auth activate-service-account --key-file=${GOOGLE_APPLICATION_CREDENTIALS}
+                        gcloud config set project ${GCP_PROJECT}
+                        gcloud container clusters get-credentials ml-anime-cluster --region us-central1
+                        kubectl apply -f deployment.yaml
+                        '''
+                    }
+                }
+            }
+        }
         stage('Push Docker Image to DockerHub') {
             steps {
                 withCredentials([usernamePassword(
@@ -81,21 +98,5 @@ pipeline{
                   }
         
             }
-        stage('Deploying to Kubernetes'){
-            steps{
-                withCredentials([file(credentialsId:'gcp-project-2-key' , variable: 'GOOGLE_APPLICATION_CREDENTIALS' )]){
-                    script{
-                        echo 'Deploying to Kubernetes'
-                        sh '''
-                        export PATH=$PATH:${GCLOUD_PATH}:${KUBECTL_AUTH_PLUGIN}
-                        gcloud auth activate-service-account --key-file=${GOOGLE_APPLICATION_CREDENTIALS}
-                        gcloud config set project ${GCP_PROJECT}
-                        gcloud container clusters get-credentials ml-anime-cluster --region us-central1
-                        kubectl apply -f deployment.yaml
-                        '''
-                    }
-                }
-            }
-        }
 }
 }
