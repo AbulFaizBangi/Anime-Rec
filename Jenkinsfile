@@ -18,14 +18,14 @@ pipeline {
             steps {
                 script {
                     echo 'Cloning from Github...'
-                    checkout scmGit(
+                    checkout([$class: 'GitSCM',
                         branches: [[name: '*/main']],
-                        extensions: [],
                         userRemoteConfigs: [[
                             credentialsId: 'jenkins-anime-github-token',
                             url: 'https://github.com/AbulFaizBangi/Anime-Rec.git'
-                        ]]
-                    )
+                        ]],
+                        extensions: [[$class: 'CloneOption', depth: 0, noTags: false, shallow: false]]
+                    ])
                 }
             }
         }
@@ -62,6 +62,7 @@ pipeline {
         stage('Build and Push Image to GCR') {
             when {
                 expression {
+                    sh(script: 'git fetch --unshallow || true', returnStatus: true)
                     def changed = sh(
                         script: "git diff --quiet HEAD~1 HEAD Dockerfile src/ || echo 'changed'",
                         returnStatus: true
@@ -112,6 +113,7 @@ pipeline {
         stage('Push Docker Image to DockerHub') {
             when {
                 expression {
+                    sh(script: 'git fetch --unshallow || true', returnStatus: true)
                     def changed = sh(
                         script: "git diff --quiet HEAD~1 HEAD Dockerfile src/ || echo 'changed'",
                         returnStatus: true
