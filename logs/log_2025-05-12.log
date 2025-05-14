@@ -1,0 +1,49 @@
+2025-05-12 00:01:03,708 - INFO - DataProcessing Intialized
+2025-05-12 00:01:05,166 - INFO - Data loaded sucesfully for Data Processing
+2025-05-12 00:01:05,588 - INFO - Filtered users sucesfully...
+2025-05-12 00:01:07,180 - INFO - Scalind done for Processing 
+2025-05-12 00:01:07,299 - INFO - Encoding done for Users and Anime
+2025-05-12 00:01:07,775 - INFO - Data splitted sucesfullyy
+2025-05-12 00:01:07,790 - INFO - user2user_encoded saved sucesfully in processed directory
+2025-05-12 00:01:07,802 - INFO - user2user_decoded saved sucesfully in processed directory
+2025-05-12 00:01:07,857 - INFO - anim2anime_encoded saved sucesfully in processed directory
+2025-05-12 00:01:07,919 - INFO - anim2anime_decoded saved sucesfully in processed directory
+2025-05-12 00:01:09,086 - ERROR - Error in /Users/abulfaiz/Udemy /Beginner_to_Advanced_ML/Project-2/src/data_processing.py , line 115 : Failed to save artifacts data
+2025-05-12 00:11:54,193 - INFO - DataProcessing Intialized
+2025-05-12 00:11:55,487 - INFO - Data loaded sucesfully for Data Processing
+2025-05-12 00:11:55,762 - INFO - Filtered users sucesfully...
+2025-05-12 00:11:57,529 - INFO - Scalind done for Processing 
+2025-05-12 00:11:57,689 - INFO - Encoding done for Users and Anime
+2025-05-12 00:11:58,198 - INFO - Data splitted sucesfullyy
+2025-05-12 00:11:58,210 - INFO - user2user_encoded saved sucesfully in processed directory
+2025-05-12 00:11:58,222 - INFO - user2user_decoded saved sucesfully in processed directory
+2025-05-12 00:11:58,266 - INFO - anim2anime_encoded saved sucesfully in processed directory
+2025-05-12 00:11:58,304 - INFO - anim2anime_decoded saved sucesfully in processed directory
+2025-05-12 00:11:59,321 - ERROR - Error saving artifacts: OSError(28, 'No space left on device')
+2025-05-12 00:11:59,321 - ERROR - Error in /Users/abulfaiz/Udemy /Beginner_to_Advanced_ML/Project-2/src/data_processing.py , line 115 : Failed to save artifacts data: [Errno 28] No space left on device
+2025-05-12 00:12:31,051 - INFO - DataProcessing Intialized
+2025-05-12 00:12:31,904 - INFO - Data loaded sucesfully for Data Processing
+2025-05-12 00:12:32,044 - INFO - Filtered users sucesfully...
+2025-05-12 00:12:33,094 - INFO - Scalind done for Processing 
+2025-05-12 00:12:33,211 - INFO - Encoding done for Users and Anime
+2025-05-12 00:12:33,650 - INFO - Data splitted sucesfullyy
+2025-05-12 00:12:33,662 - INFO - user2user_encoded saved sucesfully in processed directory
+2025-05-12 00:12:33,671 - INFO - user2user_decoded saved sucesfully in processed directory
+2025-05-12 00:12:33,706 - INFO - anim2anime_encoded saved sucesfully in processed directory
+2025-05-12 00:12:33,738 - INFO - anim2anime_decoded saved sucesfully in processed directory
+2025-05-12 00:12:34,418 - ERROR - Error saving artifacts: OSError(28, 'No space left on device')
+2025-05-12 00:12:34,419 - ERROR - Error in /Users/abulfaiz/Udemy /Beginner_to_Advanced_ML/Project-2/src/data_processing.py , line 115 : Failed to save artifacts data: [Errno 28] No space left on device
+2025-05-12 15:30:34,314 - INFO - DataProcessing Intialized
+2025-05-12 15:30:47,059 - INFO - Data loaded sucesfully for Data Processing
+2025-05-12 15:30:54,793 - INFO - Filtered users sucesfully...
+2025-05-12 15:31:12,455 - INFO - Scalind done for Processing 
+2025-05-12 15:31:15,252 - INFO - Encoding done for Users and Anime
+2025-05-12 15:31:36,498 - INFO - Data splitted sucesfullyy
+2025-05-12 15:31:36,887 - INFO - user2user_encoded saved sucesfully in processed directory
+2025-05-12 15:31:37,075 - INFO - user2user_decoded saved sucesfully in processed directory
+2025-05-12 15:31:37,103 - INFO - anim2anime_encoded saved sucesfully in processed directory
+2025-05-12 15:31:37,129 - INFO - anim2anime_decoded saved sucesfully in processed directory
+2025-05-12 15:32:03,915 - INFO - y_test saved at artifacts/processed/y_test.pkl
+2025-05-12 15:33:27,444 - INFO - All the training/testing data and rating_df are saved now.
+2025-05-12 15:33:30,375 - INFO - DF AND SYNOPSIS_Df saved sucesfullyy...
+2025-05-12 15:33:30,377 - INFO - Data Processing Pipeline Run sucesfully .... Congrats

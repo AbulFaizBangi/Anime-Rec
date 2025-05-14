@@ -1,0 +1,97 @@
+2025-05-13 15:53:04,476 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='www.comet.com', port=443): Read timed out. (read timeout=10)")': /clientlib/status-report/update
+2025-05-13 15:53:12,684 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x169302e10>: Failed to resolve 'www.comet.com' ([Errno 8] nodename nor servname provided, or not known)")': /clientlib/status-report/update
+2025-05-13 15:53:16,625 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1693112d0>: Failed to resolve 'www.comet.com' ([Errno 8] nodename nor servname provided, or not known)")': /clientlib/status-report/update
+2025-05-13 15:53:16,743 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x16931c990>: Failed to resolve 'www.comet.com' ([Errno 8] nodename nor servname provided, or not known)")': /clientlib/status-report/update
+2025-05-13 15:53:24,677 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x16932d4d0>: Failed to resolve 'www.comet.com' ([Errno 8] nodename nor servname provided, or not known)")': /clientlib/status-report/update
+2025-05-13 15:53:24,748 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x16932de90>: Failed to resolve 'www.comet.com' ([Errno 8] nodename nor servname provided, or not known)")': /clientlib/status-report/update
+2025-05-13 15:53:37,234 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='www.comet.com', port=443): Read timed out. (read timeout=10)")': /api/rest/v2/write/experiment/file-path
+2025-05-13 15:53:41,686 - INFO - Model Training & COMET ML initialized..
+2025-05-13 15:54:02,116 - INFO - Data loaded sucesfully for Model Trainig
+2025-05-13 15:54:02,800 - INFO - Succesfully read the YAML file
+2025-05-13 15:54:02,800 - INFO - Loaded configuration from config.yaml
+2025-05-13 15:54:04,995 - INFO - Model created sucesfully....
+2025-05-13 18:06:26,393 - INFO - No GPU found. Using CPU for training.
+2025-05-13 18:06:26,396 - INFO - Garbage collection enabled for better memory management
+2025-05-13 18:06:26,399 - INFO - TensorFlow thread count limited to prevent overheating
+2025-05-13 18:06:34,650 - INFO - Model Training & COMET ML initialized..
+2025-05-13 18:06:44,300 - INFO - Data loaded successfully for Model Training
+2025-05-13 18:06:44,697 - ERROR - 'list' object has no attribute 'shape'
+2025-05-13 18:23:36,773 - INFO - Model Training & COMET ML initialized..
+2025-05-13 18:23:41,877 - INFO - Data loaded sucesfully for Model Trainig
+2025-05-13 18:23:42,196 - INFO - Succesfully read the YAML file
+2025-05-13 18:23:42,198 - INFO - Loaded configuration from config.yaml
+2025-05-13 18:23:42,466 - INFO - Model created sucesfully....
+2025-05-13 18:23:42,466 - ERROR - integer division or modulo by zero
+2025-05-13 18:26:10,317 - INFO - Model Training & COMET ML initialized..
+2025-05-13 18:26:16,674 - INFO - Data loaded sucesfully for Model Trainig
+2025-05-13 18:26:16,983 - INFO - Succesfully read the YAML file
+2025-05-13 18:26:16,983 - INFO - Loaded configuration from config.yaml
+2025-05-13 18:26:17,297 - INFO - Model created sucesfully....
+2025-05-13 18:26:17,297 - INFO - Training samples: 2, Batch size: 1, Steps per epoch: 2
+2025-05-13 18:30:10,455 - INFO - Model Training & COMET ML initialized..
+2025-05-13 18:30:17,573 - INFO - Data loaded sucesfully for Model Trainig
+2025-05-13 18:30:17,830 - INFO - Succesfully read the YAML file
+2025-05-13 18:30:17,830 - INFO - Loaded configuration from config.yaml
+2025-05-13 18:30:18,687 - INFO - Model created sucesfully....
+2025-05-13 18:30:18,688 - INFO - Training samples: 2, Batch size: 1024, Steps per epoch: 0
+2025-05-13 18:34:03,171 - INFO - Model Training & COMET ML initialized..
+2025-05-13 18:34:10,183 - INFO - Data loaded sucesfully for Model Trainig
+2025-05-13 18:34:10,502 - INFO - Succesfully read the YAML file
+2025-05-13 18:34:10,503 - INFO - Loaded configuration from config.yaml
+2025-05-13 18:34:10,850 - INFO - Model created sucesfully....
+2025-05-13 18:34:10,850 - INFO - Training samples: 2, Batch size: 128, Steps per epoch: 0
+2025-05-13 18:40:26,089 - INFO - Model Training & COMET ML initialized..
+2025-05-13 18:40:31,376 - INFO - Data loaded sucesfully for Model Trainig
+2025-05-13 18:40:31,608 - INFO - Succesfully read the YAML file
+2025-05-13 18:40:31,609 - INFO - Loaded configuration from config.yaml
+2025-05-13 18:40:31,858 - INFO - Model created sucesfully....
+2025-05-13 19:55:43,941 - INFO - Model Training & COMET ML initialized..
+2025-05-13 19:55:48,741 - INFO - Data loaded sucesfully for Model Trainig
+2025-05-13 19:55:48,971 - INFO - Succesfully read the YAML file
+2025-05-13 19:55:48,971 - INFO - Loaded configuration from config.yaml
+2025-05-13 19:55:49,229 - INFO - Model created sucesfully....
+2025-05-13 19:58:38,418 - INFO - Model Training & COMET ML initialized..
+2025-05-13 19:58:42,657 - INFO - Data loaded sucesfully for Model Trainig
+2025-05-13 19:58:42,868 - INFO - Succesfully read the YAML file
+2025-05-13 19:58:42,869 - INFO - Loaded configuration from config.yaml
+2025-05-13 19:58:43,112 - INFO - Model created sucesfully....
+2025-05-13 20:05:14,231 - INFO - Model Training & COMET ML initialized..
+2025-05-13 20:05:18,993 - INFO - Data loaded successfully for Model Training
+2025-05-13 20:05:18,997 - INFO - Clamped training samples to 2 rows
+2025-05-13 20:05:19,206 - INFO - Succesfully read the YAML file
+2025-05-13 20:05:19,206 - INFO - Loaded configuration from config.yaml
+2025-05-13 20:05:19,471 - INFO - Model created sucesfully....
+2025-05-13 20:05:19,473 - ERROR - Data cardinality is ambiguous. Make sure all arrays contain the same number of samples.'x' sizes: 71417114, 71417114
+'y' sizes: 100000
+
+2025-05-13 20:07:07,078 - INFO - Model Training & COMET ML initialized..
+2025-05-13 20:07:11,008 - INFO - Data loaded successfully for Model Training
+2025-05-13 20:07:11,236 - INFO - Succesfully read the YAML file
+2025-05-13 20:07:11,236 - INFO - Loaded configuration from config.yaml
+2025-05-13 20:07:11,440 - INFO - Model created sucesfully....
+2025-05-13 20:13:10,233 - INFO - Model Training & COMET ML initialized..
+2025-05-13 20:13:14,910 - ERROR - Error in /Users/abulfaiz/Udemy /Beginner_to_Advanced_ML/Project-2/src/model_training.py , line 32 : Failed to load data
+2025-05-13 20:14:56,890 - INFO - Model Training & COMET ML initialized..
+2025-05-13 20:15:01,278 - INFO - Data loaded successfully for Model Training
+2025-05-13 20:15:01,476 - INFO - Succesfully read the YAML file
+2025-05-13 20:15:01,489 - INFO - Loaded configuration from config.yaml
+2025-05-13 20:15:01,736 - INFO - Model created sucesfully....
+2025-05-13 20:20:44,539 - INFO - DataProcessing Intialized
+2025-05-13 20:21:09,648 - INFO - Data loaded sucesfully for Data Processing
+2025-05-13 20:21:32,180 - INFO - Filtered users sucesfully...
+2025-05-13 20:22:05,432 - INFO - Scalind done for Processing 
+2025-05-13 20:22:08,406 - INFO - Encoding done for Users and Anime
+2025-05-13 20:22:36,553 - INFO - Data splitted sucesfullyy
+2025-05-13 20:22:37,585 - INFO - user2user_encoded saved sucesfully in processed directory
+2025-05-13 20:22:38,270 - INFO - user2user_decoded saved sucesfully in processed directory
+2025-05-13 20:22:38,400 - INFO - anim2anime_encoded saved sucesfully in processed directory
+2025-05-13 20:22:38,467 - INFO - anim2anime_decoded saved sucesfully in processed directory
+2025-05-13 20:22:55,802 - INFO - y_test saved at artifacts/processed/y_test.pkl
+2025-05-13 20:25:33,743 - INFO - All the training/testing data and rating_df are saved now.
+2025-05-13 20:25:40,176 - INFO - DF AND SYNOPSIS_Df saved sucesfullyy...
+2025-05-13 20:25:40,183 - INFO - Data Processing Pipeline Run sucesfully .... Congrats
+2025-05-13 20:25:47,081 - INFO - Model Training & COMET ML initialized..
+2025-05-13 20:25:49,218 - INFO - Data loaded sucesfully for Model Trainig
+2025-05-13 20:25:49,396 - INFO - Succesfully read the YAML file
+2025-05-13 20:25:49,396 - INFO - Loaded configuration from config.yaml
+2025-05-13 20:25:49,748 - INFO - Model created sucesfully....

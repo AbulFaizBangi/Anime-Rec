@@ -1,0 +1,45 @@
+2025-05-11 23:52:09,791 - INFO - DataProcessing Intialized
+2025-05-11 23:52:11,007 - INFO - Data loaded sucesfully for Data Processing
+2025-05-11 23:52:11,210 - INFO - Filtered users sucesfully...
+2025-05-11 23:52:12,674 - INFO - Scalind done for Processing 
+2025-05-11 23:52:12,824 - INFO - Encoding done for Users and Anime
+2025-05-11 23:52:13,375 - INFO - Data splitted sucessfully
+2025-05-11 23:52:13,385 - INFO - user2user_encoded saved sucesfully in processed directory
+2025-05-11 23:52:13,394 - INFO - user2user_decoded saved sucesfully in processed directory
+2025-05-11 23:52:13,437 - INFO - anim2anime_encoded saved sucesfully in processed directory
+2025-05-11 23:52:13,477 - INFO - anim2anime_decoded saved sucesfully in processed directory
+2025-05-11 23:52:14,140 - ERROR - Error in /Users/abulfaiz/Udemy /Beginner_to_Advanced_ML/Project-2/src/data_processing.py , line 116 : Failed to save artifacts data
+2025-05-11 23:57:01,419 - INFO - DataProcessing Intialized
+2025-05-11 23:57:02,881 - INFO - Data loaded sucesfully for Data Processing
+2025-05-11 23:57:03,151 - INFO - Filtered users sucesfully...
+2025-05-11 23:57:04,350 - INFO - Scalind done for Processing 
+2025-05-11 23:57:04,472 - INFO - Encoding done for Users and Anime
+2025-05-11 23:57:04,995 - INFO - Data splitted sucessfully
+2025-05-11 23:57:05,009 - INFO - user2user_encoded saved successfully at artifacts/processed/user2user_encoded.pkl
+2025-05-11 23:57:05,024 - INFO - user2user_decoded saved successfully at artifacts/processed/user2user_decoded.pkl
+2025-05-11 23:57:05,076 - INFO - anime2anime_encoded saved successfully at artifacts/processed/anime2anime_encoded.pkl
+2025-05-11 23:57:05,133 - INFO - anime2anime_decoded saved successfully at artifacts/processed/anime2anime_decoded.pkl
+2025-05-11 23:57:05,134 - ERROR - Error saving artifacts: FileNotFoundError(2, 'No such file or directory')
+2025-05-11 23:57:05,134 - ERROR - Error in /Users/abulfaiz/Udemy /Beginner_to_Advanced_ML/Project-2/src/data_processing.py , line 119 : Failed to save artifacts data: [Errno 2] No such file or directory: 'artifacts/processed/artifacts/processed/X_train_array.pkl'
+2025-05-11 23:58:08,116 - INFO - DataProcessing Intialized
+2025-05-11 23:58:09,548 - INFO - Data loaded sucesfully for Data Processing
+2025-05-11 23:58:09,891 - INFO - Filtered users sucesfully...
+2025-05-11 23:58:11,731 - INFO - Scalind done for Processing 
+2025-05-11 23:58:11,991 - INFO - Encoding done for Users and Anime
+2025-05-11 23:58:12,754 - INFO - Data splitted sucesfullyy
+2025-05-11 23:58:12,769 - INFO - user2user_encoded saved sucesfully in processed directory
+2025-05-11 23:58:12,783 - INFO - user2user_decoded saved sucesfully in processed directory
+2025-05-11 23:58:12,871 - INFO - anim2anime_encoded saved sucesfully in processed directory
+2025-05-11 23:58:12,938 - INFO - anim2anime_decoded saved sucesfully in processed directory
+2025-05-11 23:58:13,925 - ERROR - Error in /Users/abulfaiz/Udemy /Beginner_to_Advanced_ML/Project-2/src/data_processing.py , line 113 : Failed to save artifacts data
+2025-05-11 23:59:53,219 - INFO - DataProcessing Intialized
+2025-05-11 23:59:54,709 - INFO - Data loaded sucesfully for Data Processing
+2025-05-11 23:59:55,099 - INFO - Filtered users sucesfully...
+2025-05-11 23:59:57,144 - INFO - Scalind done for Processing 
+2025-05-11 23:59:57,313 - INFO - Encoding done for Users and Anime
+2025-05-11 23:59:58,135 - INFO - Data splitted sucesfullyy
+2025-05-11 23:59:58,151 - INFO - user2user_encoded saved sucesfully in processed directory
+2025-05-11 23:59:58,166 - INFO - user2user_decoded saved sucesfully in processed directory
+2025-05-11 23:59:58,223 - INFO - anim2anime_encoded saved sucesfully in processed directory
+2025-05-11 23:59:58,289 - INFO - anim2anime_decoded saved sucesfully in processed directory
+2025-05-11 23:59:59,459 - ERROR - Error in /Users/abulfaiz/Udemy /Beginner_to_Advanced_ML/Project-2/src/data_processing.py , line 115 : Failed to save artifacts data
