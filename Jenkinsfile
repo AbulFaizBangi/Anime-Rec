@@ -80,23 +80,23 @@ pipeline{
                 }
             }
         }
-        stage('Push Docker Image to DockerHub') {
-            steps {
-                withCredentials([usernamePassword(
-                        credentialsId: 'DockerHub-Creds',
-                        usernameVariable: 'DOCKERHUB_USERNAME',
-                        passwordVariable: 'DOCKERHUB_PASSWORD'
-                  )]) {
-                        echo 'Pushing Docker Image to DockerHub...'
-                        sh '''
-                              echo ${DOCKERHUB_PASSWORD} | docker login -u ${DOCKERHUB_USERNAME} --password-stdin
-                              docker tag gcr.io/${GCP_PROJECT}/ml-anime-project:latest ${DOCKERHUB_USERNAME}/ml-anime-project:latest
-                              docker push ${DOCKERHUB_USERNAME}/ml-anime-project:latest
-                              docker logout
-                        '''
-                  }
-                  }
+        // stage('Push Docker Image to DockerHub') {
+        //     steps {
+        //         withCredentials([usernamePassword(
+        //                 credentialsId: 'DockerHub-Creds',
+        //                 usernameVariable: 'DOCKERHUB_USERNAME',
+        //                 passwordVariable: 'DOCKERHUB_PASSWORD'
+        //           )]) {
+        //                 echo 'Pushing Docker Image to DockerHub...'
+        //                 sh '''
+        //                       echo ${DOCKERHUB_PASSWORD} | docker login -u ${DOCKERHUB_USERNAME} --password-stdin
+        //                       docker tag gcr.io/${GCP_PROJECT}/ml-anime-project:latest ${DOCKERHUB_USERNAME}/ml-anime-project:latest
+        //                       docker push ${DOCKERHUB_USERNAME}/ml-anime-project:latest
+        //                       docker logout
+        //                 '''
+        //           }
+        //           }
         
-            }
+        //     }
 }
 }
