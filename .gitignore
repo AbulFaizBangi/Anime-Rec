@@ -5,3 +5,4 @@ artifacts/processed/
 artifacts/weights/
 artifacts/model_checkpoint/
 MLOps_PROJECT_2.egg-info
+.DS_Store
